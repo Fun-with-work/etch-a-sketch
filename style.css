@@ -2,7 +2,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  background-image: linear-gradient(orange, yellow, green);
+  background-color: rgb(245, 178, 53);
   font-family: Impact, 'Arial Narrow Bold', sans-serif;
 }
 
@@ -15,48 +15,45 @@
 
 h2 {
   color: rgba(65, 231, 231, 0.921);
-  font-size: 2.1rem;
+  font-size: 2.2rem;
 
 }
 
 #game {
-  /* display: flex;
-  flex-direction: row; */
+  all: unset;
+  margin-bottom: 20px;
+}
+
+button {
+  all: unset;
+  transition: 1s;
   background: none;
   border: "none";
   padding: 0;
 }
 
-#game img {
-  display: block;
-
+button:hover {
+  transform: scale(1.2);
 }
 
-
-
 #game-start {
-  font-size: 1.2rem;
-  margin-right: 25px;
+  margin-right: 85px;
 }
 
 #multi-color {
-  font-size: 1.2rem;
-  margin-right: 25px;
+  margin-right: 85px;
+ 
 
 }
 
 #black-color {
-  font-size: 1.2rem;
-  margin-right: 25px;
+  margin-right: 85px;
 
 }
 
-#erase-board {
-  font-size: 1.2rem;
+/* #erase-board {
 
-
-}
-
+} */
 
 
 #container {
