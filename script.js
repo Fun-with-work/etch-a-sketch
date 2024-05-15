@@ -7,7 +7,12 @@ const multiColor = document.getElementById("multi-color");
 const blackColor = document.getElementById("black-color");
 const eraseBoard = document.getElementById("erase-board");
 
+let gridSquares = document.getElementById("container");
 
+
+gameStart.addEventListener("click", (e) => {
+    gridSquares.innerText = "It worked";
+});
 
 
 // const heading = document.getElementById("game");
