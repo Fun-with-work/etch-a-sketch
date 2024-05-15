@@ -1,31 +1,69 @@
-*, *::before, *::after {
-    box-sizing: border-box;
-    background-color: coral;
-    font-family:Impact, 'Arial Narrow Bold', sans-serif ;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  background-image: linear-gradient(orange, yellow, green);
+  font-family: Impact, 'Arial Narrow Bold', sans-serif;
+}
 
-  .main {
-      display:flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  color: rgba(65, 231, 231, 0.921);
+  font-size: 2.1rem;
+
+}
+
+#game {
+  /* display: flex;
+  flex-direction: row; */
+  background: none;
+  border: "none";
+  padding: 0;
+}
+
+#game img {
+  display: block;
+
+}
 
 
-  }
 
-  h2 {
-    color: rgba(0, 255, 255, 0.921);
-    font-size: 2.1rem;
+#game-start {
+  font-size: 1.2rem;
+  margin-right: 25px;
+}
 
-  }
+#multi-color {
+  font-size: 1.2rem;
+  margin-right: 25px;
+
+}
+
+#black-color {
+  font-size: 1.2rem;
+  margin-right: 25px;
+
+}
+
+#erase-board {
+  font-size: 1.2rem;
+
+
+}
 
 
 
-  .container {
-    display: flex;
-    justify-content: center;
-    border: 10px solid gray;
-    width: 550px;
-    height: 550px;
-    border-radius: 20%;
-  }
+#container {
+  display: flex;
+  justify-content: center;
+  border: 10px solid gray;
+  width: 550px;
+  height: 550px;
+  border-radius: 20%;
+}
