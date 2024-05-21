@@ -5,13 +5,26 @@
   font-family: Impact, 'Arial Narrow Bold', sans-serif;
 }
 
+
 h2 {
   color: rgba(48, 232, 232, 0.921);
   font-size: 2.2rem;
   text-align: center;
   margin-top: 70px;
-  margin-bottom: 70px;
+  margin-bottom: 30px;
 }
+
+#choose {
+  font-size: 1.5rem;
+  color: rgb(0, 162, 255);
+  margin-bottom: 30px;
+  transition: 0.5s; 
+}
+
+#choose:hover {
+  transform: scale(1.2);
+}
+
 
 .main {
   display: flex;
