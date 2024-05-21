@@ -7,24 +7,10 @@ const multiColor = document.getElementById("multi-color");
 const blackColor = document.getElementById("black-color");
 const eraseBoard = document.getElementById("erase-board");
 
-let myGrid = document.getElementById("container");
+const myGrid = document.getElementById("container");
 let num = 16.00;
 const widHt = 500.00;
 
-function create (num) {
-    for (i=0; i<num**2; i++) {
-        gridSquares = document.createElement("div");
-        gridSquares.className = "new-div";
-        gridSquares.style.color = "";
-        gridSquares.style.backgroundColor = "#E6A8F7";
-        gridSquares.style.outline = "2px solid gray";
-        gridSquares.style.width = Number(widHt/num)+"px";
-        gridSquares.style.height = Number(widHt/num)+"px";
-        myGrid.appendChild(gridSquares);
-    }
-};
-
-create(num);
 
 function myNumber() {
     let num = prompt ("How many squares per side do you want in the grid? Choose between 10 - 100", "16.00");
@@ -37,22 +23,33 @@ function myNumber() {
         while (myGrid.firstChild) myGrid.firstChild.remove();
         create(num);
     }};
+    
+    create(num);
+    
+function create (num) {
+    for (i=0; i<num**2; i++) {
+        gridSquares = document.createElement("div");
+        gridSquares.className = "new-div";
+        gridSquares.style.color = "";
+        gridSquares.style.backgroundColor = "#E6A8F7";
+        gridSquares.style.outline = "2px solid gray";
+        gridSquares.style.width = Number(widHt/num)+"px";
+        gridSquares.style.height = Number(widHt/num)+"px";
+        myGrid.appendChild(gridSquares);
+      
+    }
+};
 
 
-
-// function mouseOver() {
-
-
-    // for (i2=0; i2 <num**2; i2++)
-    // gridSquares.style.backgroundColor = "red";
-//   }
-
-// mouseOver();
-
-// gameStart.addEventListener("click", (e) => {
-//    for (i2=0; i2 <num**2; i2++)
-//     gridSquares.style.backgroundColor = "red";
-// });
+function mouseOver() {
+    // items.forEach((item) => {
+    myGrid.addEventListener("mouseover", event => {
+        event.target.style.backgroundColor = "magenta";    
+        
+        
+    });
+// })
+}
 
 
 // const heading = document.getElementById("game");
