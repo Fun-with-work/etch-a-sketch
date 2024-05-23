@@ -1,34 +1,40 @@
 // Etch-a-sketch
 
-// const userInput = document.createElement("p");
-
+const Choose = document.getElementById("choose");
 const gameStart = document.getElementById("game-start");
 const blackColor = document.getElementById("black-color");
 const multiColor = document.getElementById("multi-color");
 const eraseBoard = document.getElementById("erase-board");
+const myGrid = document.getElementById("container");
+let gridSquares;
 
 const textStart = document.createElement("p");
-gameStart.appendChild(textStart);
-textStart.textContent = "Click to begin";
-textStart.style.fontSize = "13px";
-
-const textMultiColor = document.createElement("p");
-multiColor.appendChild(textMultiColor);
-textMultiColor.textContent = "A different color each time";
-textMultiColor.style.fontSize = "13px";
-
 const textBlackColor = document.createElement("p");
-blackColor.appendChild(textBlackColor);
-textBlackColor.textContent = "Black here";
-textBlackColor.style.fontSize = "13px";
+const textMultiColor = document.createElement("p");
+const textEraser = document.createElement("p");
 
-const myGrid = document.getElementById("container");
+gameStart.appendChild(textStart);
+blackColor.appendChild(textBlackColor);
+multiColor.appendChild(textMultiColor);
+eraseBoard.appendChild(textEraser);
+
+textStart.style.fontSize = "13px";
+textBlackColor.style.fontSize = "13px";
+textMultiColor.style.fontSize = "13px";
+textEraser.style.fontSize = "13px";
+
+textStart.textContent = "Click to begin";
+textBlackColor.textContent = "Black here";
+textMultiColor.textContent = "Random colors";
+textEraser.textContent = "A new beginning";
+
 let num = 16.00;
 const widHt = 500.00;
+let myColor = "magenta";
 
 
-function myNumber() {
-    let num = prompt("How many squares per side do you want in the grid? Choose between 10 - 100", "16.00");
+Choose.addEventListener("click", event => {
+    let num = prompt("How many squares per side do you want? Choose between 10 - 100", "16.00");
 
     if (num == null || num == "") {
         alert("User cancelled the prompt.");
@@ -38,7 +44,7 @@ function myNumber() {
         while (myGrid.firstChild) myGrid.firstChild.remove();
         create(num);
     }
-};
+});
 
 create(num);
 
@@ -47,7 +53,7 @@ function create(num) {
         gridSquares = document.createElement("div");
         gridSquares.className = "new-div";
         gridSquares.style.color = "";
-        gridSquares.style.backgroundColor = "#E6A8F7";
+        gridSquares.style.backgroundColor = "#ECFAF6";
         gridSquares.style.outline = "2px solid gray";
         gridSquares.style.width = Number(widHt / num) + "px";
         gridSquares.style.height = Number(widHt / num) + "px";
@@ -55,36 +61,26 @@ function create(num) {
     }
 };
 
-let myColor = "magenta";
-
 
 blackColor.addEventListener("click", event => {
     (myColor = "#000000");
 });
 
 
-multiColor.addEventListener("mouseover", event => {
-    // function randomColor() {
-  { let letters = '0123456789ABCDEF';
-    myColor = '#';
-    for (let i = 0; i < 6; i++) {
-        myColor += letters[Math.floor(Math.random() * 16)];
-    }
-    return myColor;}
-
+multiColor.addEventListener("click", event => {
+    myColor = 'rgb(' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ')';
+    return myColor;
 });
 
 
-
-function mouseOver() {
-    myGrid.addEventListener("mouseover", event => {
-        event.target.style.backgroundColor = (myColor);
-
+gameStart.addEventListener("click", event => {
+    // function mouseOver() {
+        myGrid.addEventListener("mouseover", event => {
+            event.target.style.backgroundColor = (myColor);
+        })
     });
-}
+// });
 
-
-// const heading = document.getElementById("game");
 
 
 
